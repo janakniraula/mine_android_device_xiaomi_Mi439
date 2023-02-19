@@ -10,7 +10,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/awaken/config/common_full_phone.mk)
 
 # Kernel
 TARGET_KERNEL_VERSION := 4.9
@@ -23,9 +23,29 @@ PRODUCT_PACKAGES += \
     xiaomi_pine_overlay_lineage \
     xiaomi_olive_overlay_lineage
 
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+
+# GMS
+TARGET_GAPPS_ARCH := arm64
+USE_GAPPS := true
+
+# Extras
+AWAKEN_BUILD_TYPE := unofficial
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_SUPPORTS_NEXT_GEN_ASSISTANT := true
+TARGET_INCLUDE_STOCK_ARCORE := true
+TARGET_INCLUDE_PIXEL_CHARGER := true
+
+#BOOTANIMATION
+TARGET_BOOT_ANIMATION_RES :=720
+
+
+
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := Mi439
-PRODUCT_NAME := lineage_Mi439
+PRODUCT_NAME := awaken_Mi439
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := SDM439
