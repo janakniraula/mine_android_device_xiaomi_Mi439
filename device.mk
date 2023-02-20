@@ -4,6 +4,11 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Apn
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/apn/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
+
+
 # Cryptfshw
 TARGET_EXCLUDE_CRYPTFSHW := true
 
