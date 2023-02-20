@@ -9,6 +9,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/apn/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
 
 
+# Remove unwanted packages
+PRODUCT_PACKAGES += \
+    RemovePackages
+
+
 # Cryptfshw
 TARGET_EXCLUDE_CRYPTFSHW := true
 
@@ -105,3 +110,4 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/miuicam/olive.xml:$(TARGET_COPY_OUT_VENDOR)/etc/device_features/olivelite.xml \
     $(LOCAL_PATH)/configs/miuicam/olive.xml:$(TARGET_COPY_OUT_VENDOR)/etc/device_features/olivewood.xml
 endif
+
